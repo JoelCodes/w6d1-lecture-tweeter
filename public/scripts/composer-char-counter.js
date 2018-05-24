@@ -4,7 +4,10 @@ $(document).ready(function() {
   tweet.on('input', function(event) {
     const remainingLength = 140 - event.target.value.length;
     counter.text(remainingLength);
-    if (remainingLength < 0) {
+    if (tweet.length === 0) {
+      // console.log(tweet.length);
+    }
+    if (remainingLength < 10) {
       $(counter).css({color: 'red'});
     } else {
       $(counter).css({color: 'black'});

@@ -16,8 +16,30 @@
   float:            left;
 }
 
+#nav-bar .logo:hover {
+  height:           79px;
+  width:            79px;
+  margin-right:     10px;
+  float:            left;
+}
+
 #nav-bar .header {
   font-size:        2em;
   line-height:      80px;
 }
 
+#nav-bar .compose  {
+  height:           60px;
+  width:            60px;
+  margin-top:       10px;
+  margin-right:     30px;
+  float:            right;
+}
+
+#nav-bar .compose:hover {
+  height:           65px;
+  width:            65px;
+  margin-top:       10px;
+  margin-right:     30px;
+  float:            right;
+}

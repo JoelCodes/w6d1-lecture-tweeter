@@ -45,14 +45,15 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Shitter</span>
+      <img class="compose" src="/images/compose.png">
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose</h2>
+        <h2>Create a Shit</h2>
         <form action='/tweets/' method='POST'>
-          <textarea name="text" placeholder="What are you shitting on?"></textarea>
+          <textarea name="text" maxlength='140' placeholder="What are you shitting on?"></textarea>
           <input type="submit" value="Shit">
           <span class="counter">140</span>
         </form>

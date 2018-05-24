@@ -5,8 +5,8 @@
   margin: 2em;
   position: relative;
   height: 200px;
-  /*word-wrap    : break-word;
-  overflow-wrap: break-word;*/
+  word-wrap    : break-word;
+  overflow-wrap: break-word;
 }
 
 .all-tweets .header {
