@@ -1,6 +1,6 @@
 #nav-bar {
+  position: fixed;
   background: linear-gradient(45deg, #f06, yellow);
-  /*background-color: #00a087;*/
   color:            #e8fdff;
   height:           80px;
   padding:          0 2em 0 2em;
