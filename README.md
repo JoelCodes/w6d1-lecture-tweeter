@@ -21,4 +21,18 @@ This repository is the starter code for the project: Students will fork and clon
 - Moment
 - MongoDB
 
+## Screenshots
 
+- Toggle the tweet box by clicking on the write button
+![toggle-tweet-box](https://github.com/robschwitzer/tweeter/blob/master/docs/box-toggle-screenshot.png)
+
+- Empty tweet scenario
+![empty-tweet](https://github.com/robschwitzer/tweeter/blob/master/docs/empty-tweet-screenshot.png)
+
+- Long tweet scenario
+![long-tweet](https://github.com/robschwitzer/tweeter/blob/master/docs/long-tweet-screenshot.png)
+
+## Future features
+
+- User registration
+- Like capability
