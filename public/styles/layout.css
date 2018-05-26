@@ -17,7 +17,7 @@ html {
 body {
   margin: 0;
   color: #244751;
-  background-color: #eee;
+  background: #7EDCFF;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -25,10 +25,5 @@ main.container {
   padding: 80px 2em 2em 2em;
   width: 450px;
   margin: 0 auto;
-  background-color: #FFFFFF;
+  background-color: #6CB4D3;
 }
-
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */

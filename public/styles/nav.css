@@ -9,16 +9,30 @@
   z-index:          10;
 }
 
+@-webkit-keyframes tilt {
+    0%  {-webkit-transform: rotate(0deg);}
+    50% {-webkit-transform: rotate(15deg);}
+    100%  {-webkit-transform: rotate(0deg);}
+}
+
 #nav-bar .logo {
-  height:           80px;
-  width:            80px;
+  -webkit-animation: tilt 1.5s infinite linear;
+  height:           70px;
+  width:            70px;
   margin-right:     10px;
+  margin-top:       5px;
   float:            left;
 }
 
+@-webkit-keyframes spin {
+    0%  {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}
+}
+
 #nav-bar .logo:hover {
-  height:           79px;
-  width:            79px;
+  -webkit-animation: spin 200ms infinite linear;
+  height:           72px;
+  width:            72px;
   margin-right:     10px;
   float:            left;
 }
@@ -36,7 +50,14 @@
   float:            right;
 }
 
+@-webkit-keyframes write {
+    0%  {-webkit-transform: rotate(0deg);}
+    50% {-webkit-transform: rotate(40deg);}
+    100%  {-webkit-transform: rotate(0deg);}
+}
+
 #nav-bar .compose:hover {
+  -webkit-animation: write 500ms linear;
   height:           65px;
   width:            65px;
   margin-top:       10px;

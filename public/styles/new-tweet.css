@@ -1,12 +1,11 @@
 .new-tweet {
-  border: 2px solid #0000002e;
+  border: 1px solid #585B6D;
   background-color: #ececec;
   border-radius: 6px;
   padding: 10px;
   margin: 2em;
   position: relative;
   top: 50%;
-  /*transform: translateY(-50%);*/
   z-index: 3;
 }
 

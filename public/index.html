@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta Information -->
-    <title>Shitter - Home Page</title>
+        <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -28,11 +30,18 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
 
+    <!-- moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.js"></script>
+
     <!-- jQuery -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.js"
-      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-      crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
+            integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
+            crossorigin="anonymous"></script>
 
     <!-- Charcter Counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
@@ -44,25 +53,26 @@
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
-      <span class="header">Shitter</span>
-      <img class="compose" src="/images/compose.png">
+      <span class="header">Tweeeeeeeeter</span>
+      <img class="compose" src="/images/compose.svg">
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Complaint Department</h2>
+        <h2>Say something...</h2>
         <form action='/tweets/' method='POST'>
-          <textarea name="text" maxlength='140' placeholder="What are you shitting on?"></textarea>
-          <input type="submit" value="Shit">
+          <textarea name="text" maxlength='140' id="tweetcreate" placeholder="What are you on about?"></textarea>
+          <input type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
       </section>
-    <main class='tweets'>
+      <main class='tweets'>
 
-    </main>
+      </main>
 
     </main>
 
   </body>
+
 </html>
