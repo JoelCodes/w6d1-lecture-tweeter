@@ -59,11 +59,11 @@
         </form>
       </section>);
     }
-    function TweetHeader({user}){
+    function TweetHeader({ user: {name, handle, avatars: {small}}}){
       return (<header className="header">  
-        <img className="user-img" src={user.avatars.small}/>
-        <h2 className="name">{user.name}</h2>
-        <h4 className="handle">{user.handle}</h4>
+        <img className="user-img" src={small}/>
+        <h2 className="name">{name}</h2>
+        <h4 className="handle">{handle}</h4>
         </header>);
     }
     function TweetFooter({created_at}){
