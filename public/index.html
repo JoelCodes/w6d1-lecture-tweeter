@@ -44,10 +44,12 @@
     <div id="react-root">
 
     </div>
-
+  <script>
+    var tweets = [{"_id":"5b1eec411ed9f7af9245d89e","user":{"name":"Lura Francis","handle":"@Francis13","avatars":{"small":"https://vanillicon.com/6843c9e6bf9fd354c30e52c04d4f7a83_50.png","regular":"https://vanillicon.com/6843c9e6bf9fd354c30e52c04d4f7a83.png","large":"https://vanillicon.com/6843c9e6bf9fd354c30e52c04d4f7a83_200.png"}},"content":{"text":"Hey!"},"created_at":1528753217851}];
+  </script>
   <script type='text/babel'>
     const root = document.getElementById('react-root');
-    function NewTweetForm() {
+    function NewTweetForm({addTweet}) {
       return (<section className="new-tweet">
         <h2>Say something...</h2>
         <form action="/tweets/" method="POST" >
@@ -57,18 +59,48 @@
         </form>
       </section>);
     }
-
-    function Tweet(){
+    function TweetHeader({user}){
+      return (<header className="header">  
+        <img className="user-img" src={user.avatars.small}/>
+        <h2 className="name">{user.name}</h2>
+        <h4 className="handle">{user.handle}</h4>
+        </header>);
+    }
+    function TweetFooter({created_at}){
+      return <footer className="footer">
+        <span>{moment(created_at).fromNow()}</span>
+        <img className="button" src="/images/flag.svg" href="#"/>
+        <img className="button" src="/images/retweet.svg" href="#"/>
+        <img className="button" src="/images/heart.svg" href="#"/>
+      </footer>
+    }
+    function Tweet({tweet}){
+      // const tweet = props.tweet;
+      // const {tweet} = props;
       return (<article className="all-tweets">
-        <header className="header">
-          <img className="user-img" src="https://vanillicon.com/6843c9e6bf9fd354c30e52c04d4f7a83_50.png"/><h2 className="name">Lura Francis</h2><h4 className="handle">@Francis13</h4></header><p>Hey!</p><footer className="footer"><span>2 minutes ago</span><img className="button" src="/images/flag.svg" href="#"/><img className="button" src="/images/retweet.svg" href="#"/><img className="button" src="/images/heart.svg" href="#"/></footer></article>);
+          <TweetHeader user={tweet.user}/>
+          <p>{tweet.content.text}</p>
+          <TweetFooter created_at={tweet.created_at}/></article>);
     }
     class Tweeter extends React.Component {
+      constructor(){
+        super();
+        this.state = {tweets};
+        this.addTweet = this.addTweet.bind(this);
+      }
+      addTweet(text){
+        // Something
+      }
+      getTweets(){
+        // Something
+      }
       render(){
+        const tweetItems = this.state.tweets
+          .map((tweet) => <Tweet key={tweet._id} tweet={tweet}/>);
         return (<main className="container">
-          <NewTweetForm/>
+          <NewTweetForm addTweet={this.addTweet}/>
           <main className="tweets">
-            <Tweet/>
+            {tweetItems}
           </main>
       </main>);
       }
