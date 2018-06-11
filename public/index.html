@@ -47,18 +47,33 @@
 
   <script type='text/babel'>
     const root = document.getElementById('react-root');
-    ReactDOM.render(<main className="container">
-      <section className="new-tweet">
+    function NewTweetForm() {
+      return (<section className="new-tweet">
         <h2>Say something...</h2>
         <form action="/tweets/" method="POST" >
           <textarea name="text" maxLength="140" id="tweetcreate" placeholder="What are you on about?"></textarea>
           <input type="submit" value="Tweet"/>
           <span className="counter">7 characters left.</span>
         </form>
-      </section>
-      <main className="tweets"><article className="all-tweets"><header className="header"><img className="user-img" src="https://vanillicon.com/6843c9e6bf9fd354c30e52c04d4f7a83_50.png"/><h2 className="name">Lura Francis</h2><h4 className="handle">@Francis13</h4></header><p>Hey!</p><footer className="footer"><span>2 minutes ago</span><img className="button" src="/images/flag.svg" href="#"/><img className="button" src="/images/retweet.svg" href="#"/><img className="button" src="/images/heart.svg" href="#"/></footer></article></main>
+      </section>);
+    }
 
-    </main>, root);
+    function Tweet(){
+      return (<article className="all-tweets">
+        <header className="header">
+          <img className="user-img" src="https://vanillicon.com/6843c9e6bf9fd354c30e52c04d4f7a83_50.png"/><h2 className="name">Lura Francis</h2><h4 className="handle">@Francis13</h4></header><p>Hey!</p><footer className="footer"><span>2 minutes ago</span><img className="button" src="/images/flag.svg" href="#"/><img className="button" src="/images/retweet.svg" href="#"/><img className="button" src="/images/heart.svg" href="#"/></footer></article>);
+    }
+    class Tweeter extends React.Component {
+      render(){
+        return (<main className="container">
+          <NewTweetForm/>
+          <main className="tweets">
+            <Tweet/>
+          </main>
+      </main>);
+      }
+    }
+    ReactDOM.render(<Tweeter/>, root);
   </script>
   </body>
 </html>
