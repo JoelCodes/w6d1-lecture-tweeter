@@ -51,14 +51,17 @@
     const root = document.getElementById('react-root');
 
     function NewTweetForm({addTweet}) {
-      return (<section className="new-tweet">
-        <h2>Say something...</h2>
-        <form action="/tweets/" method="POST" >
-          <textarea name="text" maxLength="140" id="tweetcreate" placeholder="What are you on about?"></textarea>
-          <input type="submit" value="Tweet"/>
-          <span className="counter">7 characters left.</span>
-        </form>
-      </section>);
+      return <p><button onClick={() => {
+        addTweet("Ciao");
+      }}>Test Tweet</button></p>
+      // return (<section className="new-tweet">
+      //   <h2>Say something...</h2>
+      //   <form action="/tweets/" method="POST" >
+      //     <textarea name="text" maxLength="140" id="tweetcreate" placeholder="What are you on about?"></textarea>
+      //     <input type="submit" value="Tweet"/>
+      //     <span className="counter">7 characters left.</span>
+      //   </form>
+      // </section>);
     }
     function TweetHeader({ user: {name, handle, avatars: {small}}}){
       return (<header className="header">  
@@ -93,7 +96,16 @@
         this.getTweets();
       }
       addTweet(text){
-        // Something
+        fetch('/tweets', {
+          method: 'POST',
+          body: JSON.stringify({text: text}),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(() => {
+          this.getTweets();
+        })
       }
       getTweets(){
         fetch('/tweets')

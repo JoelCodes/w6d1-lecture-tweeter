@@ -11,6 +11,7 @@ const MONGODB_URI   = "mongodb://localhost:27017/tweeter";
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({}));
 app.use(express.static("public"));
 
 // The database of tweets
