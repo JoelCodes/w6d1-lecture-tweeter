@@ -24,28 +24,13 @@
     <!-- All Tweets CSS -->
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
-
     <!-- moment -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.js"></script>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous"></script>
 
-    <!-- jQuery UI -->
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
-            integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
-            crossorigin="anonymous"></script>
-
-    <!-- Charcter Counter JS -->
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-
+    <script src="https://unpkg.com/react@16.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
   </head>
 
   <body>
@@ -56,23 +41,24 @@
       <span class="header">Tweeeeeeeeter</span>
       <img class="compose" src="/images/compose.svg">
     </nav>
+    <div id="react-root">
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
+    </div>
+
+  <script type='text/babel'>
+    const root = document.getElementById('react-root');
+    ReactDOM.render(<main className="container">
+      <section className="new-tweet">
         <h2>Say something...</h2>
-        <form action='/tweets/' method='POST'>
-          <textarea name="text" maxlength='140' id="tweetcreate" placeholder="What are you on about?"></textarea>
-          <input type="submit" value="Tweet">
-          <span class="counter">140</span>
+        <form action="/tweets/" method="POST" >
+          <textarea name="text" maxLength="140" id="tweetcreate" placeholder="What are you on about?"></textarea>
+          <input type="submit" value="Tweet"/>
+          <span className="counter">7 characters left.</span>
         </form>
       </section>
-      <main class='tweets'>
+      <main className="tweets"><article className="all-tweets"><header className="header"><img className="user-img" src="https://vanillicon.com/6843c9e6bf9fd354c30e52c04d4f7a83_50.png"/><h2 className="name">Lura Francis</h2><h4 className="handle">@Francis13</h4></header><p>Hey!</p><footer className="footer"><span>2 minutes ago</span><img className="button" src="/images/flag.svg" href="#"/><img className="button" src="/images/retweet.svg" href="#"/><img className="button" src="/images/heart.svg" href="#"/></footer></article></main>
 
-      </main>
-
-    </main>
-
+    </main>, root);
+  </script>
   </body>
-
 </html>
