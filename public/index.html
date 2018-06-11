@@ -49,6 +49,7 @@
   </script>
   <script type='text/babel'>
     const root = document.getElementById('react-root');
+
     function NewTweetForm({addTweet}) {
       return (<section className="new-tweet">
         <h2>Say something...</h2>
@@ -85,14 +86,21 @@
     class Tweeter extends React.Component {
       constructor(){
         super();
-        this.state = {tweets};
+        this.state = {tweets: []};
         this.addTweet = this.addTweet.bind(this);
+      }
+      componentDidMount(){
+        this.getTweets();
       }
       addTweet(text){
         // Something
       }
       getTweets(){
-        // Something
+        fetch('/tweets')
+          .then((response) => response.json())
+          .then(tweets => {
+            this.setState({ tweets: tweets.reverse() });
+          });
       }
       render(){
         const tweetItems = this.state.tweets
